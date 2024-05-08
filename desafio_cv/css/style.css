@@ -1,51 +1,68 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Arial',  sans-serif;
-    background-color: #F4F4F4F4;
-    color: #333;
+body {
+    display: flex;
+    flex-direction: row;
 }
 
-header{
-    background-color: #007BFF;
-    color: #FFF;
-    padding: 10px;
-    text-align: center;
+.left {
+    width: 30%;
+    background-color: rgb(33, 31, 31);
+    color: rgb(163, 163, 163);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 30px;
 }
 
-section{
+.profile-pic {
+    margin: 0 auto;
+}
+
+#profile-img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.list {
     width: 80%;
-    margin: 20px auto;
-    background-color: #FFF;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    margin: 50px auto;
+}
+.contact-list ul{
+    list-style-type: none;
 }
 
-section ul{
-    list-style: none;
+.contact-list ul li {
+    font-size: 13px;
     margin-top: 10px;
 }
 
-li{
-    margin-bottom: 10px;
+.skills-list h4{
+    font-weight: 500;
+
 }
 
-footer{
-    text-align: center;
-    padding: 10px;
-    background-color: #007BFF;
-    color: #FFF;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.skills-list ul{
+   margin-top: 30px;
+   padding-left: 30px;
+   font-size: 13px;
 }
 
-footer a{
-    color: #FFF;
-    text-decoration: none;
+.skills-list li{
+    margin-top: 5px;
+}
+
+.education-list h4{
+    font-weight: 500;
+}
+
+.education-list div {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.education-list div strong{
+    color: rgb(203, 203, 203);
 }
