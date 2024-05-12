@@ -35,7 +35,7 @@ body {
 }
 
 .contact-list ul li {
-    font-size: 13px;
+    font-size: 20px;
     margin-top: 10px;
 }
 
@@ -47,7 +47,7 @@ body {
 .skills-list ul{
    margin-top: 30px;
    padding-left: 30px;
-   font-size: 13px;
+   font-size: 20px;
 }
 
 .skills-list li{
@@ -60,9 +60,66 @@ body {
 
 .education-list div {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .education-list div strong{
     color: rgb(203, 203, 203);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.top {
+    width: 800px;
+    margin: 80px;
+}
+
+.top h1 {
+    font-size: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 30px;
+}
+
+.top span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 38px;
+    letter-spacing: 4;
+    
+}
+
+.top p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 32px;
+    font-size: 20px;
+    color: #818181;
+}
+
+.mid {
+    margin: 20px 80px;
+}
+
+.mid h4 {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.exp {
+    margin-bottom: 30px;
+    font-size: 20px;
+    
+}
+
+
+.exp h5 {
+    letter-spacing: 2px;
+    margin: 20px 0;
+}
+
+.exp ul{
+    padding-left: 30px;
+    margin-top: 20px;
 }
