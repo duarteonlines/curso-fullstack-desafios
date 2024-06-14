@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex002</title>
+  </head>
+  <body>
+    <h2>Verificador de Número Primo</h2>
+    <form id="form">
+      <input type="number" id="numero" required />
+      <button type="button" onclick="verificarPrimo()">Verificar</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+      function verificarPrimo() {
+        var numero = parseInt(document.getElementById("numero").value);
+        var resultado = document.getElementById("resultado");
+
+        if (isPrimo(numero)) {
+          resultado.innerHTML = `O Número ${numero} é primo`;
+        } else {
+          resultado.innerHTML = `O Número ${numero} não é primo`;
+        }
+      }
+
+      function isPrimo(num) {
+        if (num <= 1) return false;
+        if (num === 2) return true;
+        if (num % 2 === 0) return false;
+        for (var i = 3; i <= Math.sqrt(num); i += 2) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

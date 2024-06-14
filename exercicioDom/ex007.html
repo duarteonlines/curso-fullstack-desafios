@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex007</title>
+  </head>
+  <body>
+    <h1>Dados</h1>
+    <form>
+      <button type="button" onclick="somaDados()">Lancar</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+      function somaDados() {
+        let resultado = document.getElementById('resultado')
+        let dado1 = Math.floor(Math.random() * 6) + 1
+        let dado2 = Math.floor(Math.random() * 6) + 1
+        let soma = dado1 + dado2
+
+        resultado.innerHTML = `Dado 1: ${dado1}<br>Dado 2: ${dado2}<br>Soma: ${soma}`
+      }
+    </script>
+  </body>
+</html>

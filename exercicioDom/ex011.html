@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex011</title>
+  </head>
+  <body>
+    <h1>Fibonacci</h1>
+    <form>
+      <input type="number" id="numero" />
+      <button type="button" onclick="fibonacci()">Calcular</button>
+      <div id="resultado"></div>
+    </form>
+    <script>
+      function fibonacci() {
+        let numero = parseInt(document.getElementById('numero').value)
+        let resultado = document.getElementById('resultado')
+        seq = [0, 1]
+        for (let i = 2; i <= numero; i++) {
+          seq[i] = seq[i - 1] + seq[i - 2]
+        }
+        resultado.innerHTML = seq
+      }
+    </script>
+  </body>
+</html>

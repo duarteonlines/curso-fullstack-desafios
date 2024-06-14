@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ordernar</h1>
+    <form>
+      <input type="text" placeholder="ex: 3,2,3,4,6,8,9" id="numeros" />
+      <button type="button" onclick="ordenar()">Ordernar</button>
+    </form>
+
+    <div id="resultado"></div>
+    <script>
+      function ordenar() {
+        let numeros = document.getElementById('numeros').value
+        let resultado = document.getElementById('resultado')
+        let array = numeros.split(',').map(Number)
+        ordenarArray = array.sort((a, b) => a - b)
+        resultado.innerHTML = ordenarArray
+      }
+    </script>
+  </body>
+</html>

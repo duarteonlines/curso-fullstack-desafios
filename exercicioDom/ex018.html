@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Compras</title>
+  </head>
+  <body>
+    <h2>Calculadora de Compras</h2>
+    <label for="produto">Produto:</label>
+    <input type="text" id="produto" /><br /><br />
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" step="0.01" /><br /><br />
+    <button onclick="adicionarProduto()">Adicionar Produto</button><br /><br />
+
+    <h3>Lista de Produtos</h3>
+    <ul id="lista-produtos"></ul>
+    <br />
+
+    <button onclick="calcularTotal()">Calcular Total</button><br /><br />
+    Total: R$ <span id="total">0.00</span><br /><br />
+
+    <button onclick="aplicarDesconto()">Aplicar Desconto</button><br /><br />
+    Desconto: R$ <span id="desconto">0.00</span><br />
+    Total com Desconto: R$ <span id="total-com-desconto">0.00</span><br /><br />
+
+    <script>
+      let produtos = []
+
+      function adicionarProduto() {
+        let produto = document.getElementById('produto').value.trim()
+        let preco = parseFloat(document.getElementById('preco').value)
+
+        produtos.push({ produto, preco })
+        exibirListaProdutos()
+        document.getElementById('produto').value = ''
+        document.getElementById('preco').value = ''
+      }
+
+      function exibirListaProdutos() {
+        let listaProdutos = document.getElementById('lista-produtos')
+        listaProdutos.innerHTML = ''
+
+        produtos.forEach((item) => {
+          let li = document.createElement('li')
+          li.textContent = `${item.produto}: R$ ${item.preco.toFixed(2)}`
+          listaProdutos.appendChild(li)
+        })
+      }
+
+      function calcularTotal() {
+        let total = produtos.reduce((acc, item) => acc + item.preco, 0)
+        document.getElementById('total').textContent = total.toFixed(2)
+      }
+
+      function aplicarDesconto() {
+        let total = parseFloat(document.getElementById('total').textContent)
+
+        if (total > 100) {
+          let desconto = total * 0.1
+          let totalComDesconto = total - desconto
+
+          document.getElementById('desconto').textContent = desconto.toFixed(2)
+          document.getElementById('total-com-desconto').textContent =
+            totalComDesconto.toFixed(2)
+        } else {
+          alert('Total da compra não atende à condição de desconto.')
+        }
+      }
+    </script>
+  </body>
+</html>

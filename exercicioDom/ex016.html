@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex016</title>
+  </head>
+  <body>
+    <h1>Par ou Impar</h1>
+    <form>
+      <input type="number" id="num" />
+      <button type="button" onclick="parOuImpar()">Ver</button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+      function parOuImpar() {
+        let num = document.getElementById('num').value
+        let resultado = document.getElementById('resultado')
+        let par = []
+        let impar = []
+        for (let i = 1; i < num; i++) {
+          if (i % 2 === 0) {
+            par.push(i)
+          } else {
+            impar.push(i)
+          }
+        }
+        resultado.innerHTML = `Numeros pares: ${par}<br> Numeros impares: ${impar}`
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="display" readonly />
+      <div class="row">
+        <button onclick="adicionarNum('7')">7</button>
+        <button onclick="adicionarNum('8')">8</button>
+        <button onclick="adicionarNum('9')">9</button>
+        <button onclick="limpar()">C</button>
+      </div>
+      <div class="row">
+        <button onclick="adicionarNum('4')">4</button>
+        <button onclick="adicionarNum('5')">5</button>
+        <button onclick="adicionarNum('6')">6</button>
+        <button onclick="adicionarNum('+')">+</button>
+      </div>
+      <div class="row">
+        <button onclick="adicionarNum('1')">1</button>
+        <button onclick="adicionarNum('2')">2</button>
+        <button onclick="adicionarNum('3')">3</button>
+        <button onclick="adicionarNum('-')">-</button>
+      </div>
+      <div class="row">
+        <button onclick="adicionarNum('0')">0</button>
+        <button onclick="adicionarNum('.')">.</button>
+        <button onclick="calcular()">=</button>
+        <button onclick="adicionarNum('*')">*</button>
+      </div>
+      <div class="row">
+        <button onclick="potencia()">x<sup>y</sup></button>
+        <button onclick="raizQuadrada()">√</button>
+        <button onclick="adicionarNum('/')">/</button>
+      </div>
+    </div>
+
+    <script>
+      function adicionarNum(value) {
+        document.getElementById('display').value += value
+      }
+
+      function limpar() {
+        document.getElementById('display').value = ''
+      }
+
+      function calcular() {
+        const expressao = document.getElementById('display').value
+        document.getElementById('display').value = eval(expressao)
+      }
+
+      function potencia() {
+        const expressao = document.getElementById('display').value
+        document.getElementById('display').value = Math.pow(expressao, 2)
+      }
+
+      function raizQuadrada() {
+        const expressao = document.getElementById('display').value
+        document.getElementById('display').value = Math.sqrt(expressao)
+      }
+    </script>
+  </body>
+</html>

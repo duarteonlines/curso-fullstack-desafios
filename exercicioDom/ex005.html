@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabuada</title>
+  </head>
+  <body>
+    <h1>Soma dos numeros</h1>
+    <form id="form">
+      <input
+        type="number"
+        id="numero"
+        placeholder="insira um numero"
+        required
+      />
+      <button type="button" onclick="tabuada()">Mostrar tabuada</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+      function tabuada() {
+        var numero = parseInt(document.getElementById('numero').value)
+        var resultado = document.getElementById('resultado')
+        var tabuada = ''
+        for (var i = 1; i <= 10; i++) {
+          tabuada += `${numero} x ${i} = ${numero * i}<br>`
+        }
+        resultado.innerHTML = tabuada
+      }
+    </script>
+  </body>
+</html>

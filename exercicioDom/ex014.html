@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex014</title>
+  </head>
+  <body>
+    <h1>Maior e Menor</h1>
+    <form>
+      <input type="text" placeholder="ex: 1,2,3,4,5,6" id="numeros" />
+      <button type="button" onclick="maiorMenor()">Encontrar</button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+      function maiorMenor() {
+        let numeros = document.getElementById('numeros').value
+        let resultado = document.getElementById('resultado')
+        let array = numeros.split(',').map(Number)
+        let maior = Math.max(...array)
+        let menor = Math.min(...array)
+
+        resultado.innerHTML = `Maior: ${maior}<br>Menor: ${menor}`
+      }
+    </script>
+  </body>
+</html>

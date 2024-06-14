@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex012</title>
+  </head>
+  <body>
+    <h1>Palíndromo</h1>
+    <form>
+      <input type="text" id="palavra" />
+      <button type="button" onclick="verificarPalindromo()">
+        Verificar Palíndromo
+      </button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+      function verificarPalindromo() {
+        let palavra = document.getElementById('palavra').value.toLowerCase()
+        let resultado = document.getElementById('resultado')
+        if (palavra === palavra.split('').reverse().join('')) {
+          resultado.innerHTML = 'É um palíndromo'
+        } else {
+          resultado.innerHTML = 'Não é um palíndromo'
+        }
+      }
+    </script>
+  </body>
+</html>

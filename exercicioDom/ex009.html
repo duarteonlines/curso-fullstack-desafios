@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex009</title>
+  </head>
+  <body>
+    <h1>Vogais e Consoantes</h1>
+    <form>
+      <textarea id="frase"></textarea>
+      <button type="button" onclick="vogaisConsoantes()">Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+      function vogaisConsoantes() {
+        let frase = document.getElementById('frase').value.toLowerCase()
+        let resultado = document.getElementById('resultado')
+        let vogais = 0
+        let consoantes = 0
+        console.log(frase)
+        letras = frase.match(/[a-z]/g)
+        console.log(letras)
+        for (let i = 0; i < frase.length; i++) {
+          letra = letras[i]
+          if ('aeiou'.includes(letra)) {
+            vogais++
+          } else {
+            consoantes++
+          }
+        }
+
+        resultado.innerHTML = `Vogais: ${vogais}<br>Consoantes: ${consoantes}`
+      }
+    </script>
+  </body>
+</html>

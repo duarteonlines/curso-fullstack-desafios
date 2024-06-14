@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex004</title>
+  </head>
+  <body>
+    <h1>Soma dos numeros</h1>
+    <form id="form">
+      <input
+        type="number"
+        id="numero"
+        placeholder="insira um numero"
+        required
+      />
+      <button type="button" onclick="somar()">Somar</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+      function somar() {
+        var numero = parseInt(document.getElementById('numero').value)
+        var resultado = document.getElementById('resultado')
+        var soma = 0
+        for (var i = 1; i <= numero; i++) {
+          soma += i
+        }
+        resultado.innerHTML = `A soma dos números até ${numero} é ${soma}.`
+      }
+    </script>
+  </body>
+</html>

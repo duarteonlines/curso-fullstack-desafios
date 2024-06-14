@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex010</title>
+  </head>
+  <body>
+    <h1>Converter para binario</h1>
+    <form>
+      <input type="text" id="numero" />
+      <button type="button" onclick="converterBinario()">Converter</button>
+    </form>
+
+    <div id="resultado"></div>
+    <script>
+      function converterBinario() {
+        let numero = document.getElementById('numero').value
+        let resultado = document.getElementById('resultado')
+        numeroBinario = '0'
+        aux = numero
+        if (numero === 0) {
+          numeroBinario = 0
+        } else {
+          while (numero > 0) {
+            let resto = numero % 2
+            numeroBinario += resto
+            numero = Math.floor(numero / 2)
+          }
+        }
+
+        resultado.innerHTML = `O binário de ${aux} é ${numeroBinario}`
+      }
+    </script>
+  </body>
+</html>

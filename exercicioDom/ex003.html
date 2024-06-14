@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex003</title>
+  </head>
+  <body>
+    <h1>Adivinhar Numero</h1>
+    <form id="form">
+      <input type="number" id="numero" required />
+      <button type="button" onclick="adivinhar()">Adivinhar</button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+      function adivinhar() {
+        let numero = parseInt(document.getElementById("numero").value);
+        let resultado = document.getElementById("resultado");
+        let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+        if (numero === numeroAleatorio) {
+          resultado.innerHTML = `Parabéns, o número era ${numeroAleatorio}.`;
+        } else if (numero < numeroAleatorio) {
+          resultado.innerHTML = `O número ${numero} é menor que o número aleatório.`;
+        } else {
+          resultado.innerHTML = `O número ${numero} é maior que o número aleatório.`;
+        }
+      }
+    </script>
+  </body>
+</html>
